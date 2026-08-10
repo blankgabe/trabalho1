@@ -1,5 +1,5 @@
 :root { 
-    --bg-color: rgb(102, 92, 94); 
+    --bg-color: #DBBE8C; 
     
  }
  a{
@@ -82,7 +82,7 @@
     margin-right: auto;
 
     width: 100%;
-    border-radius: 30px;
+    border-bottom
 }
 
 #index-footer {
@@ -91,7 +91,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: -20px;
 
 }
 
