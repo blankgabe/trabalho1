@@ -1,1 +1,28 @@
-a
+/* catalogo */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 30px;
+}
+
+.produto {
+    text-align: center;
+}
+
+.produto img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.produto h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.produto p {
+    margin: 0;
+    font-size: 16px;
+}

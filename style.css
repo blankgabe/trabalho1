@@ -8,6 +8,25 @@
     cursor: pointer; 
 }
 
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+}
+
+/* FONTE  */
+
+#lancamento{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 35px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
+    color:bisque;
+    
+}
+
+/* MENU FLUTUANTE*/
 
 #header{
     background-color: rgb(255, 255, 255);
@@ -52,89 +71,6 @@
     text-decoration: none;
 }
 
-#menu details{
-    position: relative;
-}
-
-#menu details summary{
-    list-style: none;
-    cursor: pointer;
-}
-
-
-#lancamento{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    font-size: 35px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
-    color:bisque;
-    
-}
-
-#frutitas-index{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
-#index-footer {
-    background-color: rgb(70, 59, 59);
-    height: 900px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 0px;
-
-}
-
-
-body{
-    background-color: var(--bg-color);
-    margin: 0;
-}
-
-body #home{
-    background-color: #DCBF8E;
-}
-form{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-input{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: burlywood;
-    color:bisque
-}
-select{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: burlywood;
-    color:bisque
-}
-#preencherlogin{
-    text-align: center;
-    text-align: top;
-    font-size: 35px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(102, 92, 94);
-    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
-    color:bisque;
-}
-fieldset{
-    text-align: center;
-}
-.colecoes{
-    text-align: center;
-    font-size: 35px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
-    color:bisque;
-    text-decoration: none;
-}
 
 #menu details{
     position: relative;
@@ -185,4 +121,67 @@ fieldset{
 
 #menu .submenu a:hover{
     color: rgb(102, 92, 94);
+}
+
+
+/* página - INDEX */
+
+body #home.body{
+    background-color: #DCBF8E;
+}
+
+#frutitas-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#index-footer {
+    background-color: rgb(70, 59, 59);
+    height: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+
+}
+
+/* Página LOGIN */
+
+form{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+input{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: burlywood;
+    color:bisque
+}
+select{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: burlywood;
+    color:bisque
+}
+#preencherlogin{
+    text-align: center;
+    text-align: top;
+    font-size: 35px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(102, 92, 94);
+    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
+    color:bisque;
+}
+fieldset{
+    text-align: center;
+}
+.colecoes{
+    text-align: center;
+    font-size: 35px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
+    color:bisque;
+    text-decoration: none;
 }
