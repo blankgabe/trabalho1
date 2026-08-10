@@ -26,3 +26,68 @@ main {
     margin: 0;
     font-size: 16px;
 }
+
+/* funcionamento da parte de clicar e abrir os detalhes de compra, tamanho e essas coisas */
+#detalhes-produto {
+    display: none;
+}
+#detalhes-produto {
+    display: none;
+    width: 90%;
+    margin: 30px auto;
+    gap: 40px;
+}
+/* imagem */
+.imagem-detalhes {
+    width: 60%;
+}
+.imagem-detalhes img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+}
+/* informações do produto */
+.informacoes-produto {
+    width: 40%;
+    padding: 20px;
+}
+/* nome */
+.informacoes-produto h1 {
+    font-size: 30px;
+    
+}
+/* preco */
+.preco {
+    font-size: 30px;
+    font-weight: bold;
+}
+/* enfeitando os botos xg g m p */
+.tamanhos button {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* botao do carrinho */
+.botao-carrinho {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.botao-voltar{
+    width: 30%;
+    padding: 15px;
+    margin-top: 25px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
