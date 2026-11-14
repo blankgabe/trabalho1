@@ -1,51 +1,64 @@
 :root { 
     --bg-color: #DBBE8C; 
-    
- }
- a{
+}
+
+a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
 }
 
-body{
+body {
     background-color: var(--bg-color);
     margin: 0;
 }
 
-/* FONTE  */
 
-#lancamento{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    font-size: 35px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
-    color:bisque;
-    
+/* 1. FAZ O MENU FLUTUAR */
+header {
+    position: sticky;
+    top: 8px;
+    z-index: 1000;
 }
 
-/* MENU FLUTUANTE*/
+/* 2. MENU NO TOPO */
+#header {
 
-#header{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(6px);
+    
     height: 50px;
     width: 95%;
-    border-radius: 30px;;
-
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px auto;
- }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease; 
+}
 
-#logo img{
+#logo img {
     margin-left: 30px;
     height: 70px;
     width: 70px;
+    transition: all 0.4s ease; 
+}
+
+/* MENU REDUZIDO  */
+header.menu-reduzido #header {
+    height: 40px; 
+    width: 80%; 
+    margin: 5px auto; 
     
-} 
+    /* Mantém a transparência mesmo quando reduzido */
+    background-color: rgba(255, 255, 255, 0.6); 
+}
+
+header.menu-reduzido #logo img {
+    height: 50px; 
+    width: 50px;
+}
 
 #menu {
     display: flex;
@@ -60,25 +73,32 @@ body{
     font-size: 16px;
 }
 
-#icons{
+
+#menu a, #menu summary, #menu .submenu a {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#icons {
     display: flex;
     margin-right: 30px;
     gap: 15px;
     align-items: center;
 }
 
-#icons a{
+#icons a {
     color: black;
     text-decoration: none;
 }
-/* parte do gustavo */
 
-
-#menu details{
+/* dropdown */
+#menu details {
     position: relative;
 }
 
-#menu summary{
+#menu summary {
     list-style: none;
     cursor: pointer;
     display: flex;
@@ -86,56 +106,49 @@ body{
     gap: 5px;
 }
 
-#menu summary::-webkit-details-marker{
+#menu summary::-webkit-details-marker {
     display: none;
 }
 
-#menu .seta{
+#menu .seta {
     transition: 0.3s;
 }
 
-#menu details[open] .seta{
+#menu details[open] .seta {
     transform: rotate(180deg);
 }
 
-#menu .submenu{
+#menu .submenu {
     position: absolute;
     top: 30px;
     left: 0;
-
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     min-width: 120px;
     padding: 10px 15px;
-
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-#menu .submenu a{
+#menu .submenu a {
     color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-#menu .submenu a:hover{
+#menu .submenu a:hover {
     color: rgb(102, 92, 94);
 }
 
-
 /* página - INDEX */
-
-body #home.body{
+body #home.body {
     background-color: #DCBF8E;
 }
 
-
 /* banner - INDEX */
-
-#frutitas-index{
+#frutitas-index {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,76 +165,169 @@ body #home.body{
 
 #botao-colecao {
     position: absolute;
-
     right: 8%;
     bottom: 8%;
-
     width: 250px;
     height: 60px;
-
     background: transparent;
     color: transparent;
     border: none;
-
     cursor: pointer;
 }
 
-/* fotter - INDEX */
-
-#index-footer {
-    background-color: rgb(70, 59, 59);
-    height: 900px;
+/* ==================== ÁREA DE LANÇAMENTOS ==================== */
+#fundo-lancamentos {
+    background-color: rgb(70, 59, 59); /* Marrom escuro original dos lançamentos */
     width: 100%;
+    height: 900px;
     display: flex;
     justify-content: center;
-    margin-top: 0px;
+    padding: 60px 0;
+    
+}
 
+
+#lancamento {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: bisque; /* Cor clara para destacar no fundo escuro */
 }
 
 .Lancamentos {
     width: 100%;
     max-width: 1200px;
-    margin: 40px auto;
     text-align: center;
+    padding: 0 20px; 
+    box-sizing: border-box;
 }
 
-
 .Lancamentos p {
-    font-size: 20px;
-    color: #ddd7d7;
-    margin-bottom: 25px;
+    font-size: 18px;
+    color: #ddd7d7; /* Cor clara original */
+    margin-bottom: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .Lancamentos .produtos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    gap: 25px; 
     text-align: left;
 }
 
 .Lancamentos .produto {
     position: relative;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.Lancamentos .produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .Lancamentos .produto img {
     width: 100%;
-    border-radius: 5px;
-    background-color: #f5f5f5;
+    border-radius: 10px;
+    background-color: #f4f4f5;
+    transition: transform 0.4s ease;
+    margin-bottom: 12px;
+}
+
+.Lancamentos .produto:hover img {
+    transform: scale(1.03);
 }
 
 .Lancamentos .produto h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 8px 0 3px;
-    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 5px 0 4px;
+    color: #1a1a1a;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .Lancamentos .produto span {
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* ==================== NOVO FOOTER (RODAPÉ) ==================== */
+#site-footer {
+    background-color: #382C29; /* Um marrom café escuro, mantendo a paleta */
+    color: #ffffff;
+    padding: 60px 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 60px;
+    border-right: 1px solid #5a4b47; /* Borda ajustada para o tom marrom */
+}
+
+.footer-brand img {
+    width: 120px;
+    filter: brightness(0) invert(1); /* Deixa a sua logo branca */
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding-left: 20px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #dbbe8c; /* Destaque nas categorias usando o bege do site */
+}
+
+.footer-col a {
+    color: #d1c8c5;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
 
 
 

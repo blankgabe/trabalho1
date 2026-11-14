@@ -1,109 +1,124 @@
-<doctype html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Loja</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Loja</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-    <body id="home.body">
+<body id="home.body">
 
-        <header>
-            <div id="header">
-
-                <div id="logo">
-                    <a href="index.html"><img src="assets/logo megalofds.png"></a>
-                </div>
-
-                <nav id="menu">
-
-                    <details class="dropdown">
-
-                        <summary>Coleções <span class="seta">▼</span></summary>
-
-                        <div class="submenu">
-                            <a href="colecaofrutas.html">Las frutitas</a>
-                            <a href="colecaodavibrito.html">Calma calabreso</a>
-                            <a href="colecaoishowspeed.html">Say walahi</a>
-                            <a href="colecaobangers.html">Bangers</a>
-                        </div>
-
-                    </details>
-                    <a href="catalogo.html">Catalogo</a>
-
-
-
-                </nav>
-
-                <div id="icons">
-                    <span class="material-icons">search</span>
-                    <a href="login.html"><span class="material-icons">person</span></a>
-                    <span class="material-icons">shopping_bag</span>
-                </div>
-
+    <header>
+        <div id="header">
+            <div id="logo">
+                <a href="index.html"><img src="assets/logo megalofds.png" alt="Logo"></a>
             </div>
 
-        </header>
+            <nav id="menu">
+                <details class="dropdown">
+                    <summary>Coleções <span class="seta">▼</span></summary>
+                    <div class="submenu">
+                        <a href="colecaofrutas.html">Las frutitas</a>
+                        <a href="colecaodavibrito.html">Calma calabreso</a>
+                        <a href="colecaoishowspeed.html">Say walahi</a>
+                        <a href="colecaobangers.html">Bangers</a>
+                    </div>
+                </details>
+                <a href="catalogo.html">Catalogo</a>
+            </nav>
 
-        <main>
-            <!-- <img id="frutitas-index" src="/assets/lasfrutitaslabubu.png" alt="nova colecao"> -->
-            <div id="banner-index">
-                <img id="frutitas-index" src="/assets/lasfrutitaslabubu.png" alt="nova colecao">
-
-                <a href="colecaofrutas.html" id="botao-colecao">
-                    Nova coleção
-                </a>
+            <div id="icons">
+                <span class="material-icons">search</span>
+                <a href="login.html"><span class="material-icons">person</span></a>
+                <span class="material-icons">shopping_bag</span>
             </div>
+        </div>
+    </header>
 
-            <div id="index-arrivals">
+    <main>
+        <div id="banner-index">
+            <img id="frutitas-index" src="/assets/lasfrutitaslabubu.png" alt="nova colecao">
+            <a href="colecaofrutas.html" id="botao-colecao">Nova coleção</a>
+        </div>
 
-        </main>
+        <div id="index-arrivals"></div>
 
+        <!-- Seção de Lançamentos com o fundo marrom -->
+        <div id="fundo-lancamentos">
+            <section class="Lancamentos">
+                <h2 id="lancamento">Lançamentos</h2>
+                <p>Confira nossas novidades e encontre seu próximo favorito.</p>
 
-        <footer>
-            <div id="index-footer">
-                <section class="Lancamentos">
-
-                    <h2 class="colecoes">Lançamentos</h2>
-                    <p>Confira nossas novidades e encontre seu próximo favorito.</p>
-
-                    <div class="produtos">
-
-                        <div class="produto">
-                            <img src="/assets/Cracks 01.png" alt="Produto">
-                            <h3>Cracks Aurudo</h3>
-                            <span>R$ 167,67</span>
-                        </div>
-
-                        <div class="produto">
-                            <img src="/assets/Caneca.png" alt="Produto">
-                            <h3>Caneca Megalo</h3>
-                            <span>R$ 129,90</span>
-                        </div>
-
-                        <div class="produto">
-                            <img src="/assets/mouse pad.png" alt="Produto">
-                            <h3>MousePad Megalo</h3>
-                            <span>R$ 89,90</span>
-                        </div>
-
-                        <div class="produto">
-                            <img src="/assets/Mochila.png" alt="Produto">
-                            <h3>Pinchila</h3>
-                            <span>R$ 469,67</span>
-                        </div>
-
+                <div class="produtos">
+                    <div class="produto">
+                        <img src="/assets/Cracks 01.png" alt="Produto">
+                        <h3>Cracks Aurudo</h3>
+                        <span>R$ 167,67</span>
                     </div>
 
+                    <div class="produto">
+                        <img src="/assets/Caneca.png" alt="Produto">
+                        <h3>Caneca Megalo</h3>
+                        <span>R$ 129,90</span>
+                    </div>
 
-                </section>
+                    <div class="produto">
+                        <img src="/assets/mouse pad.png" alt="Produto">
+                        <h3>MousePad Megalo</h3>
+                        <span>R$ 89,90</span>
+                    </div>
+
+                    <div class="produto">
+                        <img src="/assets/Mochila.png" alt="Produto">
+                        <h3>Pinchila</h3>
+                        <span>R$ 469,67</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- NOVO RODAPÉ (Tons de marrom e sem ícones sociais) -->
+    <footer id="site-footer">
+        <div class="footer-container">
+            <!-- Coluna 1: Logo -->
+            <div class="footer-brand">
+                <img src="assets/logo megalofds.png" alt="Megalo Logo">
             </div>
-            <a id="text-fundadores"href="fundadores.html"><span class="colecoes">Fundadores</span></a>
 
-        </fotter>
-    </body>
+            <!-- Colunas de Links -->
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>A Megalo</h4>
+                    <a href="fundadores.html">Quem Somos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Políticas</h4>
+                    <a href="#">Termos de privacidade</a>
+                    <a href="#">Trocas e devoluções</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ajuda</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Atendimento</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    </html>
-    </ddoctype>
+   
+    <script>
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("header");
+            // Se rolar mais de 20 pixels para baixo, ativa o "menu-reduzido". Se voltar pro topo, desativa.
+            header.classList.toggle("menu-reduzido", window.scrollY > 20);
+        });
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
