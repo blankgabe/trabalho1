@@ -11,7 +11,7 @@ const produtos = [
     {
         nome: "Lobo Solitário",
         preco: "R$ 89,90",
-        imagem: "assets/el lobo cuida su loba.png",
+        imagem: "assets/lobao.png",
         colecao: "bangers"
     },
     {
@@ -29,31 +29,31 @@ const produtos = [
     {
         nome: "Vai Curintia",
         preco: "R$ 89,90",
-        imagem: "assets/vai curintia.png",
+        imagem: "assets/vaza krl.png",
         colecao: "bangers"
     },
     {
         nome: "Ih Ala Mane",
         preco: "R$ 89,90",
-        imagem: "assets/ih ala mane.png",
+        imagem: "assets/ih ala.png",
         colecao: "bangers"
     },
     {
         nome: "Calma BB",
         preco: "R$ 89,90",
-        imagem: "assets/calabreso1.png",
+        imagem: "assets/calma bb.png",
         colecao: "calabreso"
     },
     {
         nome: "Calma Calabreso",
         preco: "R$ 89,90",
-        imagem: "assets/calabreso2.png",
+        imagem: "assets/calma calabreso.png",
         colecao: "calabreso"
     },
     {
         nome: "Calabresa",
         preco: "R$ 89,90",
-        imagem: "assets/calabreso3.png",
+        imagem: "assets/CALABRESA..png",
         colecao: "calabreso"
     },
     {
@@ -65,31 +65,31 @@ const produtos = [
     {
         nome: "Abacatudo",
         preco: "R$ 89,90",
-        imagem: "assets/frutas1.png",
+        imagem: "assets/abacatudo.png",
         colecao: "frutas"
     },
     {
         nome: "Moranguete",
         preco: "R$ 89,90",
-        imagem: "assets/frutas2.png",
+        imagem: "assets/moranguete.png",
         colecao: "frutas"
     },
     {
         nome: "Bananudo",
         preco: "R$ 89,90",
-        imagem: "assets/frutas3.png",
+        imagem: "assets/bananudo irado.png",
         colecao: "frutas"
     },
     {
         nome: "Shhhh",
         preco: "R$ 89,90",
-        imagem: "assets/speed1.png",
+        imagem: "assets/shhhhhh speed.png",
         colecao: "speed"
     },
     {
         nome: "My Mom Is Kinda Homeless",
         preco: "R$ 89,90",
-        imagem: "assets/speed2.png",
+        imagem: "assets/my mom is kind homeless.png",
         colecao: "speed"
     }
 ];
