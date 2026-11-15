@@ -3,11 +3,47 @@
 <head>
     <title>Loja</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<header><a href="index.html"><img src="assets/megalo logo.png" title="voltar ao menu principal" width="70px"
-            height="70px"></a> </header><br>
+
 
 <body>
+    <header>
+        <div id="header">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img src="assets/logo megalofds.png" alt="Logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <details class="dropdown">
+                    <summary>Coleções <span class="seta">▼</span></summary>
+
+                    <div class="submenu">
+                        <a href="colecaofrutas.html">Las frutitas</a>
+                        <a href="colecaodavibrito.html">Calma calabreso</a>
+                        <a href="colecaoishowspeed.html">Say walahi</a>
+                        <a href="colecaobangers.html">Bangers</a>
+                    </div>
+                </details>
+
+                <a href="catalogo.html">Catalogo</a>
+            </nav>
+
+            <div id="icons">
+                <span class="material-icons">search</span>
+                <a href="login.html"><span class="material-icons">person</span></a>
+
+                <button id="abrir-carrinho">
+                    <span class="material-icons">shopping_bag</span>
+                    <span id="contador-carrinho">0</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
     <main>
         <div id="preencherlogin">Preencha com seus dados abaixo para criar sua conta</div>
         <form id="formLogin">

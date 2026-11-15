@@ -8,6 +8,7 @@ main {
 
 .produto {
     text-align: center;
+    cursor: pointer;
 }
 
 .produto img {

@@ -4,90 +4,48 @@
     <title>Veja nosso catalogo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="camisetas.css">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<header><a href="index.html"><img src="assets/megalo logo.png" title="voltar ao menu principal" width="70px"
-            ht="70px"></a> </header><br>
+
 
 <body>
+    <header>
+        <div id="header">
 
-    <main id="catalogo"><!--        
-        <div class="produto" onclick="abrirProduto('Megalo?', 'R$ 89,90', 'assets/megalo peita.png')">
-            <img src="assets/megalo peita.png" title="megalo?" alt="megalo?">
-            <h3>Megalo?</h3>
-            <p>R$ 89,90</p>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="assets/logo megalofds.png" alt="Logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <details class="dropdown">
+                    <summary>Coleções <span class="seta">▼</span></summary>
+
+                    <div class="submenu">
+                        <a href="colecaofrutas.html">Las frutitas</a>
+                        <a href="colecaodavibrito.html">Calma calabreso</a>
+                        <a href="colecaoishowspeed.html">Say walahi</a>
+                        <a href="colecaobangers.html">Bangers</a>
+                    </div>
+                </details>
+
+                <a href="catalogo.html">Catalogo</a>
+            </nav>
+
+            <div id="icons">
+                <span class="material-icons">search</span>
+                <a href="login.html"><span class="material-icons">person</span></a>
+
+                <button id="abrir-carrinho">
+                    <span class="material-icons">shopping_bag</span>
+                    <span id="contador-carrinho">0</span>
+                </button>
+            </div>
+
         </div>
-        <div class="produto" onclick="abrirProduto('Lobo Solitário', 'R$ 89,90', 'assets/el lobo cuida su loba.png')">
-            <img src="assets/el lobo cuida su loba.png" title="lobo solitario" alt="lobo solitario">
-            <h3>Lobo Solitário</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Patrick Estrela Bobão', 'R$ 89,90', 'assets/patrick estrela bobao.png')">
-            <img src="assets/patrick estrela bobao.png" title="patrick estrela bobao" alt="patrick estrela bobao">
-            <h3>Patrick Estrela Bobão</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Oi Posso Fala', 'R$ 89,90', 'assets/Camisaoipossofala.png')">
-            <img src="assets/Camisaoipossofala.png" title="oi posso fala" alt="oi posso fala">
-            <h3>Oi Posso Fala</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Vai Curintia', 'R$ 89,90', 'assets/vai curintia.png')">
-            <img src="assets/vai curintia.png" title="vai curintia" alt="vai curintia">
-            <h3>Vai Curintia</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Ih Ala Mane', 'R$ 89,90', 'assets/ih ala mane.png')">
-            <img src="assets/ih ala mane.png" title="ih ala" alt="ih ala">
-            <h3>Ih Ala Mane</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Calma BB', 'R$ 89,90', 'assets/calabreso1.png')">
-            <img src="assets/calabreso1.png" title="calma bb" alt="calma bb">
-            <h3>Calma BB</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Calma Calabreso', 'R$ 89,90', 'assets/calabreso2.png')">
-            <img src="assets/calabreso2.png" title="calma calabreso" alt="calma calabreso">
-            <h3>Calma Calabreso</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Sexy Calabreso', 'R$ 89,90', 'assets/calabreso3.png')">
-            <img src="assets/calabreso3.png" title="calabresa" alt="calabresa">
-            <h3>Calabresa</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Sexy Calabreso', 'R$ 89,90', 'assets/calabreso4.png')">
-            <img src="assets/calabreso4.png" title="sexy calabreso" alt="sexy calabreso">
-            <h3>Sexy Calabreso</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Abacatudo', 'R$ 89,90', 'assets/frutas1.png')">
-            <img src="assets/frutas1.png" title="abacatudo" alt="abacatudo">
-            <h3>Abacatudo</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Moranguete', 'R$ 89,90', 'assets/frutas2.png')">
-            <img src="assets/frutas2.png" title="moranguete" alt="moranguete">
-            <h3>Moranguete</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Bananudo', 'R$ 89,90', 'assets/frutas3.png')">
-            <img src="assets/frutas3.png" title="bananudo" alt="bananudo">
-            <h3>Bananudo</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('Shhhh', 'R$ 89,90', 'assets/speed1.png')">
-            <img src="assets/speed1.png" title="shhhh" alt="shhhh">
-            <h3>Shhhh</h3>
-            <p>R$ 89,90</p>
-        </div>
-        <div class="produto" onclick="abrirProduto('My Mom Is Kinda Homeless', 'R$ 89,90', 'assets/speed2.png')">
-            <img src="assets/speed2.png" title="my mom is kinda homeless" alt="my mom is kinda homeless">
-            <h3>My Mom Is Kinda Homeless</h3>
-            <p>R$ 89,90</p>
-        </div>  -->
- 
+    </header>
+    <main id="catalogo">
     </main>
     <div id="detalhes-produto">
 

@@ -6,6 +6,7 @@
     <title>Loja</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 </head>
 
 <body id="home.body">
@@ -32,7 +33,10 @@
             <div id="icons">
                 <span class="material-icons">search</span>
                 <a href="login.html"><span class="material-icons">person</span></a>
-                <span class="material-icons">shopping_bag</span>
+                <button id="abrir-carrinho">
+                    <span class="material-icons">shopping_bag</span>
+                    <span id="contador-carrinho">0</span>
+                </button>
             </div>
         </div>
     </header>
@@ -45,7 +49,7 @@
 
         <div id="index-arrivals"></div>
 
-    <!-- Lançamentos -->
+        <!-- Lançamentos -->
         <div id="fundo-lancamentos">
             <section class="Lancamentos">
                 <h2 id="lancamento">Lançamentos</h2>
@@ -53,7 +57,7 @@
 
                 <!-- CAIXA QUE SEGURA O CARROSSEL E AS SETAS -->
                 <div class="carrossel-wrapper">
-                    
+
                     <button class="seta-carrossel seta-esq" onclick="voltar()">❮</button>
 
                     <!-- PRODUTOS -->
@@ -79,22 +83,22 @@
                             <span>R$ 469,67</span>
                         </div>
                         <div class="produto">
-                        <img src="/assets/godinho.png" alt="Produto">
-                        <h3>Pelúcia Godinho</h3>
-                        <span>R$69,99</span>
-                        
+                            <img src="/assets/godinho.png" alt="Produto">
+                            <h3>Pelúcia Godinho</h3>
+                            <span>R$69,99</span>
+
                         </div>
                         <div class="produto">
-                        <img src="/assets/calça dogs.png" alt="Produto">
-                        <h3>Calça AuDogs</h3>
-                        <span>R$ 113,34</span>
-                        
+                            <img src="/assets/calça dogs.png" alt="Produto">
+                            <h3>Calça AuDogs</h3>
+                            <span>R$ 113,34</span>
+
                         </div>
                         <div class="produto">
-                        <img src="/assets/moletom ds.png" alt="Produto">
-                        <h3>Moletom DS</h3>
-                        <span>R$ 251,01</span>
-                        
+                            <img src="/assets/moletom ds.png" alt="Produto">
+                            <h3>Moletom DS</h3>
+                            <span>R$ 251,01</span>
+
                         </div>
                     </div>
 
@@ -130,9 +134,9 @@
         </div>
     </footer>
 
-   
+
     <script>
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             var header = document.querySelector("header");
             header.classList.toggle("menu-reduzido", window.scrollY > 20);
         });
@@ -152,7 +156,9 @@
     </script>
 
 </body>
+
 </html>
 
 </body>
+
 </html>

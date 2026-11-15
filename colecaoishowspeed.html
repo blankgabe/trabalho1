@@ -3,15 +3,82 @@
 <head>
     <title>Say walahi</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="camisetas.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<header><a href="index.html"><img src="assets/megalo logo.png" title="voltar ao menu principal" width="70px" height="70px"></a> </header><br>
 
 <body>
+    <header>
+        <div id="header">
+
+            <div id="logo">
+                <a href="index.html">
+                    <img src="assets/logo megalofds.png" alt="Logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <details class="dropdown">
+                    <summary>Coleções <span class="seta">▼</span></summary>
+
+                    <div class="submenu">
+                        <a href="colecaofrutas.html">Las frutitas</a>
+                        <a href="colecaodavibrito.html">Calma calabreso</a>
+                        <a href="colecaoishowspeed.html">Say walahi</a>
+                        <a href="colecaobangers.html">Bangers</a>
+                    </div>
+                </details>
+
+                <a href="catalogo.html">Catalogo</a>
+            </nav>
+
+            <div id="icons">
+                <span class="material-icons">search</span>
+                <a href="login.html"><span class="material-icons">person</span></a>
+
+                <button id="abrir-carrinho">
+                    <span class="material-icons">shopping_bag</span>
+                    <span id="contador-carrinho">0</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
     <span class="colecoes">Conheça a coleção say walahi</span>
-    <main>
-        <img src="assets/speed1.png" title="shhhh" heigt="250px"width="250px">
-        <img src="assets/speed2.png" title="my mom is kinda homeless" heigt="250px"width="250px">
+    <main id="catalogo" data-colecao="speed">
     </main>
+    <div id="detalhes-produto">
+
+        <div class="imagem-detalhes">
+            <img id="imagem-detalhes" src="" alt="">
+        </div>
+
+        <div class="informacoes-produto">
+            <h2 id="nome-detalhes"></h2>
+            <p id="preco-detalhes" class="preco"></p>
+
+            <p>Escolha o tamanho:</p>
+
+            <div class="tamanhos">
+                <button>P</button>
+                <button>M</button>
+                <button>G</button>
+                <button>GG</button>
+                <button>XG</button>
+            </div>
+
+            <button class="botao-carrinho">Adicionar ao carrinho</button>
+
+            <br><br>
+
+            <button class="botao-voltar" onclick="voltarCatalogo()">Voltar</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
