@@ -1,51 +1,63 @@
 :root { 
     --bg-color: #DBBE8C; 
-    
- }
- a{
+}
+
+a {
     text-decoration: none; 
     color: inherit; 
     cursor: pointer; 
 }
 
-body{
+body {
     background-color: var(--bg-color);
     margin: 0;
 }
 
-/* FONTE  */
 
-#lancamento{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    font-size: 35px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: rgb(189, 162, 130) 2px 2px 1px;
-    color:bisque;
-    
+/* FAZ O MENU FLUTUAR */
+header {
+    position: sticky;
+    top: 8px;
+    z-index: 1000;
 }
 
-/* MENU FLUTUANTE*/
+/* MENU NO TOPO */
+#header {
 
-#header{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(6px);
+    
     height: 50px;
     width: 95%;
-    border-radius: 30px;;
-
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px auto;
- }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease; 
+}
 
-#logo img{
+#logo img {
     margin-left: 30px;
     height: 70px;
     width: 70px;
+    transition: all 0.4s ease; 
+}
+
+/* MENU REDUZIDO  */
+header.menu-reduzido #header {
+    height: 40px; 
+    width: 80%; 
+    margin: 5px auto; 
     
-} 
+    background-color: rgba(255, 255, 255, 0.6); 
+}
+
+header.menu-reduzido #logo img {
+    height: 50px; 
+    width: 50px;
+}
 
 #menu {
     display: flex;
@@ -60,25 +72,32 @@ body{
     font-size: 16px;
 }
 
-#icons{
+
+#menu a, #menu summary, #menu .submenu a {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#icons {
     display: flex;
     margin-right: 30px;
     gap: 15px;
     align-items: center;
 }
 
-#icons a{
+#icons a {
     color: black;
     text-decoration: none;
 }
-/* parte do gustavo */
 
-
-#menu details{
+/* dropdown */
+#menu details {
     position: relative;
 }
 
-#menu summary{
+#menu summary {
     list-style: none;
     cursor: pointer;
     display: flex;
@@ -86,56 +105,49 @@ body{
     gap: 5px;
 }
 
-#menu summary::-webkit-details-marker{
+#menu summary::-webkit-details-marker {
     display: none;
 }
 
-#menu .seta{
+#menu .seta {
     transition: 0.3s;
 }
 
-#menu details[open] .seta{
+#menu details[open] .seta {
     transform: rotate(180deg);
 }
 
-#menu .submenu{
+#menu .submenu {
     position: absolute;
     top: 30px;
     left: 0;
-
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     min-width: 120px;
     padding: 10px 15px;
-
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-#menu .submenu a{
+#menu .submenu a {
     color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-#menu .submenu a:hover{
+#menu .submenu a:hover {
     color: rgb(102, 92, 94);
 }
 
-
 /* página - INDEX */
-
-body #home.body{
+body #home.body {
     background-color: #DCBF8E;
 }
 
-
 /* banner - INDEX */
-
-#frutitas-index{
+#frutitas-index {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,76 +164,230 @@ body #home.body{
 
 #botao-colecao {
     position: absolute;
-
     right: 8%;
     bottom: 8%;
-
     width: 250px;
     height: 60px;
-
     background: transparent;
     color: transparent;
     border: none;
-
     cursor: pointer;
 }
 
-/* fotter - INDEX */
-
-#index-footer {
-    background-color: rgb(70, 59, 59);
-    height: 900px;
+/* ==================== LANÇAMENTOS ==================== */
+#fundo-lancamentos {
+    background-color: rgb(70, 59, 59); 
     width: 100%;
+    height: 800px;
     display: flex;
     justify-content: center;
-    margin-top: 0px;
+    padding: 60px 0;
+}
 
+#lancamento {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: bisque; 
 }
 
 .Lancamentos {
     width: 100%;
     max-width: 1200px;
-    margin: 40px auto;
     text-align: center;
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+.Lancamentos p {
+    font-size: 18px;
+    color: #ddd7d7; 
+    margin-bottom: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ==================== CARROSSEL E SETAS ==================== */
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
-.Lancamentos p {
-    font-size: 20px;
-    color: #ddd7d7;
-    margin-bottom: 25px;
+.seta-carrossel {
+    position: absolute;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.seta-carrossel:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+}
+
+.seta-esq {
+    left: -22px; 
+}
+
+.seta-dir {
+    right: -22px; 
 }
 
 .Lancamentos .produtos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    text-align: left;
+    display: flex;
+    gap: 25px; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 5px; 
+    width: 100%;
+    
+    /* Esconde a barra de rolagem nativa */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
+
+.Lancamentos .produtos::-webkit-scrollbar {
+    display: none; 
+}
+
+/* ==================== (PRODUTOS) ==================== */
 
 .Lancamentos .produto {
     position: relative;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    
+    width: 270px;          
+    flex: 0 0 270px;       /* Impede a imagem de esticar o card */
+    box-sizing: border-box;
 }
 
-.Lancamentos .produto img {
+.Lancamentos .produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+Lancamentos .produto img {
     width: 100%;
-    border-radius: 5px;
-    background-color: #f5f5f5;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Deixa as imagens quadradas e alinhadas */
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #f4f4f5;
+    transition: transform 0.4s ease;
+    margin-bottom: 12px;
+}
+
+.Lancamentos .produto:hover img {
+    transform: scale(1.03);
 }
 
 .Lancamentos .produto h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 8px 0 3px;
-    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 5px 0 4px;
+    color: #1a1a1a;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .Lancamentos .produto span {
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    color: #555555;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
+/* ==================== FOOTER ==================== */
+#site-footer {
+    background-color: #382C29; 
+    color: #ffffff;
+    padding: 60px 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 60px;
+    border-right: 1px solid #5a4b47; 
+}
+
+.footer-brand img {
+    width: 120px;
+    filter: brightness(0) invert(1); 
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding-left: 20px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #dbbe8c; 
+}
+
+.footer-col a {
+    color: #d1c8c5;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
 
 
 
@@ -268,4 +434,268 @@ fieldset{
     justify-content: center;
     text-align: center;
     background-color: rgb(70, 59, 59);
+}
+
+
+
+
+/* ==================== CARRINHO ==================== */
+
+/* Fundo escuro que aparece atrás do carrinho */
+#fundo-carrinho {
+    position: fixed; /* Mantém o fundo fixo na tela */
+    inset: 0; /* Ocupa toda a tela */
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.45); /* Escurece o fundo */
+    backdrop-filter: blur(3px); /* Aplica um leve desfoque */
+
+    display: flex;
+    justify-content: flex-end; /* Posiciona o carrinho à direita */
+
+    z-index: 2000; /* Faz o carrinho aparecer acima dos outros elementos */
+
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Impede que seja visualizado inicialmente */
+
+    transition: 0.3s; /* Suaviza a abertura e o fechamento */
+}
+
+/* Painel branco onde ficam os produtos */
+#carrinho {
+    width: 440px;
+    max-width: 92%;
+    height: 100%;
+
+    background-color: #faf9f7;
+    padding: 28px;
+    box-sizing: border-box; /* Inclui o padding dentro da largura */
+
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+
+    transform: translateX(100%); /* Esconde o painel fora da tela */
+    transition: 0.35s ease; /* Cria o efeito de deslizamento */
+
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.12); /* Sombra do painel */
+}
+
+/* Classe adicionada pelo JavaScript quando o carrinho é aberto */
+#fundo-carrinho.aberto {
+    opacity: 1; /* Torna o fundo visível */
+    visibility: visible;
+}
+
+/* Faz o painel voltar para dentro da tela */
+#fundo-carrinho.aberto #carrinho {
+    transform: translateX(0);
+}
+
+
+/* ==================== CABEÇALHO DO CARRINHO ==================== */
+
+/* Organiza o título e o botão de fechar */
+.topo-carrinho {
+    display: flex;
+    justify-content: space-between; /* Separa os elementos */
+    align-items: center; /* Alinha verticalmente */
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5dfd9; /* Linha divisória */
+}
+
+/* Estilização do título "Meu carrinho" */
+.topo-carrinho h2 {
+    margin: 0;
+    font-size: 25px;
+    color: #382c29;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+}
+
+/* Botão X para fechar o carrinho */
+#fechar-carrinho {
+    background: none;
+    border: none;
+
+    font-size: 25px;
+    color: #382c29;
+
+    cursor: pointer; /* Mostra a mão ao passar o mouse */
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse no botão de fechar */
+#fechar-carrinho:hover {
+    transform: rotate(90deg); /* Gira o botão */
+    color: #a47c58;
+}
+
+
+/* ==================== ÁREA DOS PRODUTOS ==================== */
+
+/* Área onde os produtos adicionados serão exibidos */
+#itens-carrinho {
+    flex: 1; /* Ocupa o espaço disponível */
+    overflow-y: auto; /* Permite rolar caso existam muitos produtos */
+    padding: 20px 5px;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Mensagem exibida quando o carrinho está vazio */
+#itens-carrinho > p {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+
+/* ==================== CARD DOS PRODUTOS ==================== */
+
+/* Organiza a imagem e as informações de cada camiseta */
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Espaço entre a imagem e as informações */
+
+    padding: 14px;
+    margin-bottom: 14px;
+
+    background-color: white;
+    border: 1px solid #eee9e3;
+    border-radius: 12px; /* Arredonda os cantos */
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Imagem da camiseta dentro do carrinho */
+.item-carrinho img {
+    width: 95px;
+    height: 115px;
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+
+    border-radius: 8px;
+}
+
+/* Nome da camiseta */
+.item-carrinho h3 {
+    margin: 0 0 8px;
+    color: #382c29;
+    font-size: 16px;
+}
+
+/* Informações do produto: tamanho, preço etc. */
+.item-carrinho p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ==================== CONTROLES DE QUANTIDADE ==================== */
+
+/* Organiza os botões de diminuir, aumentar e a quantidade */
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 12px 0;
+}
+
+/* Botões de + e - */
+.controles-quantidade button {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background-color: #faf9f7;
+    color: #382c29;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse nos botões de quantidade */
+.controles-quantidade button:hover {
+    background-color: #382c29;
+    color: white;
+}
+
+/* Número que mostra a quantidade de camisetas */
+.controles-quantidade span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==================== BOTÃO REMOVER PRODUTO ==================== */
+
+/* Estilização do botão que exclui um produto do carrinho */
+.remover-produto {
+    border: none;
+    background: none;
+
+    color: #a47c58;
+    font-size: 12px;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Muda a cor ao passar o mouse no botão remover */
+.remover-produto:hover {
+    color: #382c29;
+}
+
+
+/* ==================== RODAPÉ DO CARRINHO ==================== */
+
+/* Área que mostra o total e o botão de finalizar compra */
+.rodape-carrinho {
+    border-top: 1px solid #e5dfd9; /* Linha que separa os produtos do rodapé */
+    padding-top: 20px;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Organização do texto do valor total */
+.rodape-carrinho h3 {
+    display: flex;
+    justify-content: space-between;
+
+    color: #382c29;
+    font-size: 19px;
+
+    margin: 0 0 18px;
+}
+
+/* Botão de finalizar compra */
+#finalizar-compra {
+    width: 100%;
+    padding: 16px;
+
+    background-color: #382c29;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Efeito ao passar o mouse no botão finalizar compra */
+#finalizar-compra:hover {
+    background-color: #59453e;
+    transform: translateY(-2px); /* Move levemente o botão para cima */
 }

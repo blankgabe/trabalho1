@@ -8,6 +8,7 @@ main {
 
 .produto {
     text-align: center;
+    cursor: pointer;
 }
 
 .produto img {
@@ -90,4 +91,10 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.tamanhos button.selecionado {
+    background-color: #111;
+    color: white;
+    border-color: #111;
 }
