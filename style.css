@@ -174,11 +174,11 @@ body #home.body {
     cursor: pointer;
 }
 
-/* ==================== ÁREA DE LANÇAMENTOS ==================== */
+/* ==================== LANÇAMENTOS ==================== */
 #fundo-lancamentos {
-    background-color: rgb(70, 59, 59); /* Marrom escuro original dos lançamentos */
+    background-color: rgb(70, 59, 59); 
     width: 100%;
-    height: 900px;
+    height: 800px;
     display: flex;
     justify-content: center;
     padding: 60px 0;
@@ -193,7 +193,7 @@ body #home.body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: bisque; /* Cor clara para destacar no fundo escuro */
+    color: bisque; 
 }
 
 .Lancamentos {
@@ -206,14 +206,13 @@ body #home.body {
 
 .Lancamentos p {
     font-size: 18px;
-    color: #ddd7d7; /* Cor clara original */
+    color: #ddd7d7; 
     margin-bottom: 40px;
     font-family: system-ui, -apple-system, sans-serif;
 }
 
 /* ==================== CARROSSEL E SETAS ==================== */
 
-/* Caixa invisível que alinha as setas com os produtos */
 .carrossel-wrapper {
     position: relative;
     display: flex;
@@ -223,7 +222,7 @@ body #home.body {
     margin: 0 auto;
 }
 
-/* Estilo das setinhas redondas */
+
 .seta-carrossel {
     position: absolute;
     background-color: #ffffff;
@@ -255,10 +254,9 @@ body #home.body {
     right: -22px; 
 }
 
-/* A pista de rolagem dos produtos (Substituiu o antigo "grid") */
 .Lancamentos .produtos {
     display: flex;
-    gap: 25px; /* Mantive o seu gap original de 25px */
+    gap: 25px; 
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 15px 5px; 
@@ -273,7 +271,7 @@ body #home.body {
     display: none; 
 }
 
-/* ==================== ESTILO DOS CARDS (PRODUTOS) ==================== */
+/* ==================== (PRODUTOS) ==================== */
 
 .Lancamentos .produto {
     position: relative;
@@ -287,8 +285,7 @@ body #home.body {
     flex-direction: column;
     text-align: left;
     
-    /* === A CORREÇÃO ESTÁ AQUI 👇 === */
-    width: 270px;          /* Define uma largura exata para o card */
+    width: 270px;          
     flex: 0 0 270px;       /* Impede a imagem de esticar o card */
     box-sizing: border-box;
 }
@@ -328,9 +325,9 @@ Lancamentos .produto img {
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ==================== NOVO FOOTER (RODAPÉ) ==================== */
+/* ==================== FOOTER ==================== */
 #site-footer {
-    background-color: #382C29; /* Um marrom café escuro, mantendo a paleta */
+    background-color: #382C29; 
     color: #ffffff;
     padding: 60px 40px;
     font-family: system-ui, -apple-system, sans-serif;
@@ -350,12 +347,12 @@ Lancamentos .produto img {
     flex-direction: column;
     justify-content: center;
     padding-right: 60px;
-    border-right: 1px solid #5a4b47; /* Borda ajustada para o tom marrom */
+    border-right: 1px solid #5a4b47; 
 }
 
 .footer-brand img {
     width: 120px;
-    filter: brightness(0) invert(1); /* Deixa a sua logo branca */
+    filter: brightness(0) invert(1); 
 }
 
 .footer-links {
@@ -378,7 +375,7 @@ Lancamentos .produto img {
     margin: 0 0 10px 0;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #dbbe8c; /* Destaque nas categorias usando o bege do site */
+    color: #dbbe8c; 
 }
 
 .footer-col a {

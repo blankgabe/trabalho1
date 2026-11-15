@@ -45,7 +45,7 @@
 
         <div id="index-arrivals"></div>
 
-    <!-- Seção de Lançamentos -->
+    <!-- Lançamentos -->
         <div id="fundo-lancamentos">
             <section class="Lancamentos">
                 <h2 id="lancamento">Lançamentos</h2>
@@ -54,10 +54,9 @@
                 <!-- CAIXA QUE SEGURA O CARROSSEL E AS SETAS -->
                 <div class="carrossel-wrapper">
                     
-                    <!-- Seta Esquerda (Estilo da foto) -->
                     <button class="seta-carrossel seta-esq" onclick="voltar()">❮</button>
 
-                    <!-- PISTA DE PRODUTOS -->
+                    <!-- PRODUTOS -->
                     <div class="produtos" id="lista-produtos">
                         <div class="produto">
                             <img src="/assets/Cracks 01.png" alt="Produto">
@@ -65,7 +64,7 @@
                             <span>R$ 167,67</span>
                         </div>
                         <div class="produto">
-                            <img src="/assets/caneca nova.png.png" alt="Produto">
+                            <img src="/assets/caneca nova.png" alt="Produto">
                             <h3>Caneca Megalo</h3>
                             <span>R$ 129,90</span>
                         </div>
@@ -99,7 +98,6 @@
                         </div>
                     </div>
 
-                    <!-- Seta Direita (Estilo da foto) -->
                     <button class="seta-carrossel seta-dir" onclick="avancar()">❯</button>
 
                 </div>
@@ -109,12 +107,10 @@
 
     <footer id="site-footer">
         <div class="footer-container">
-            <!-- Coluna 1: Logo -->
             <div class="footer-brand">
                 <img src="assets/logo megalofds.png" alt="Megalo Logo">
             </div>
 
-            <!-- Colunas de Links -->
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>A Megalo</h4>
@@ -138,12 +134,11 @@
     <script>
         window.addEventListener("scroll", function() {
             var header = document.querySelector("header");
-            // Se rolar mais de 20 pixels para baixo, ativa o "menu-reduzido". Se voltar pro topo, desativa.
             header.classList.toggle("menu-reduzido", window.scrollY > 20);
         });
     </script>
 
-    <!-- MOTOR DO CARROSSEL -->
+    <!-- CARROSSEL -->
     <script>
         var pista = document.getElementById("lista-produtos");
 
