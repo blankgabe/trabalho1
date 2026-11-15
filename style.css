@@ -435,3 +435,267 @@ fieldset{
     text-align: center;
     background-color: rgb(70, 59, 59);
 }
+
+
+
+
+/* ==================== CARRINHO ==================== */
+
+/* Fundo escuro que aparece atrás do carrinho */
+#fundo-carrinho {
+    position: fixed; /* Mantém o fundo fixo na tela */
+    inset: 0; /* Ocupa toda a tela */
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.45); /* Escurece o fundo */
+    backdrop-filter: blur(3px); /* Aplica um leve desfoque */
+
+    display: flex;
+    justify-content: flex-end; /* Posiciona o carrinho à direita */
+
+    z-index: 2000; /* Faz o carrinho aparecer acima dos outros elementos */
+
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Impede que seja visualizado inicialmente */
+
+    transition: 0.3s; /* Suaviza a abertura e o fechamento */
+}
+
+/* Painel branco onde ficam os produtos */
+#carrinho {
+    width: 440px;
+    max-width: 92%;
+    height: 100%;
+
+    background-color: #faf9f7;
+    padding: 28px;
+    box-sizing: border-box; /* Inclui o padding dentro da largura */
+
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+
+    transform: translateX(100%); /* Esconde o painel fora da tela */
+    transition: 0.35s ease; /* Cria o efeito de deslizamento */
+
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.12); /* Sombra do painel */
+}
+
+/* Classe adicionada pelo JavaScript quando o carrinho é aberto */
+#fundo-carrinho.aberto {
+    opacity: 1; /* Torna o fundo visível */
+    visibility: visible;
+}
+
+/* Faz o painel voltar para dentro da tela */
+#fundo-carrinho.aberto #carrinho {
+    transform: translateX(0);
+}
+
+
+/* ==================== CABEÇALHO DO CARRINHO ==================== */
+
+/* Organiza o título e o botão de fechar */
+.topo-carrinho {
+    display: flex;
+    justify-content: space-between; /* Separa os elementos */
+    align-items: center; /* Alinha verticalmente */
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5dfd9; /* Linha divisória */
+}
+
+/* Estilização do título "Meu carrinho" */
+.topo-carrinho h2 {
+    margin: 0;
+    font-size: 25px;
+    color: #382c29;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+}
+
+/* Botão X para fechar o carrinho */
+#fechar-carrinho {
+    background: none;
+    border: none;
+
+    font-size: 25px;
+    color: #382c29;
+
+    cursor: pointer; /* Mostra a mão ao passar o mouse */
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse no botão de fechar */
+#fechar-carrinho:hover {
+    transform: rotate(90deg); /* Gira o botão */
+    color: #a47c58;
+}
+
+
+/* ==================== ÁREA DOS PRODUTOS ==================== */
+
+/* Área onde os produtos adicionados serão exibidos */
+#itens-carrinho {
+    flex: 1; /* Ocupa o espaço disponível */
+    overflow-y: auto; /* Permite rolar caso existam muitos produtos */
+    padding: 20px 5px;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Mensagem exibida quando o carrinho está vazio */
+#itens-carrinho > p {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+
+/* ==================== CARD DOS PRODUTOS ==================== */
+
+/* Organiza a imagem e as informações de cada camiseta */
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Espaço entre a imagem e as informações */
+
+    padding: 14px;
+    margin-bottom: 14px;
+
+    background-color: white;
+    border: 1px solid #eee9e3;
+    border-radius: 12px; /* Arredonda os cantos */
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Imagem da camiseta dentro do carrinho */
+.item-carrinho img {
+    width: 95px;
+    height: 115px;
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+
+    border-radius: 8px;
+}
+
+/* Nome da camiseta */
+.item-carrinho h3 {
+    margin: 0 0 8px;
+    color: #382c29;
+    font-size: 16px;
+}
+
+/* Informações do produto: tamanho, preço etc. */
+.item-carrinho p {
+    margin: 5px 0;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ==================== CONTROLES DE QUANTIDADE ==================== */
+
+/* Organiza os botões de diminuir, aumentar e a quantidade */
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 12px 0;
+}
+
+/* Botões de + e - */
+.controles-quantidade button {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background-color: #faf9f7;
+    color: #382c29;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse nos botões de quantidade */
+.controles-quantidade button:hover {
+    background-color: #382c29;
+    color: white;
+}
+
+/* Número que mostra a quantidade de camisetas */
+.controles-quantidade span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==================== BOTÃO REMOVER PRODUTO ==================== */
+
+/* Estilização do botão que exclui um produto do carrinho */
+.remover-produto {
+    border: none;
+    background: none;
+
+    color: #a47c58;
+    font-size: 12px;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Muda a cor ao passar o mouse no botão remover */
+.remover-produto:hover {
+    color: #382c29;
+}
+
+
+/* ==================== RODAPÉ DO CARRINHO ==================== */
+
+/* Área que mostra o total e o botão de finalizar compra */
+.rodape-carrinho {
+    border-top: 1px solid #e5dfd9; /* Linha que separa os produtos do rodapé */
+    padding-top: 20px;
+
+    font-family: system-ui, sans-serif;
+}
+
+/* Organização do texto do valor total */
+.rodape-carrinho h3 {
+    display: flex;
+    justify-content: space-between;
+
+    color: #382c29;
+    font-size: 19px;
+
+    margin: 0 0 18px;
+}
+
+/* Botão de finalizar compra */
+#finalizar-compra {
+    width: 100%;
+    padding: 16px;
+
+    background-color: #382c29;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+/* Efeito ao passar o mouse no botão finalizar compra */
+#finalizar-compra:hover {
+    background-color: #59453e;
+    transform: translateY(-2px); /* Move levemente o botão para cima */
+}

@@ -92,3 +92,9 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.tamanhos button.selecionado {
+    background-color: #111;
+    color: white;
+    border-color: #111;
+}

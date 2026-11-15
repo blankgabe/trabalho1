@@ -1,3 +1,6 @@
+let produtoSelecionado = null;
+let tamanhoSelecionado = null;
+
 const produtos = [  
     {
         nome: "Megalo?",
@@ -124,6 +127,9 @@ produtosFiltrados.forEach(function(produto) {
 });
 
 function abrirProduto(produto) {
+    produtoSelecionado = produto;
+    
+    tamanhoSelecionado = null;
 
     document.getElementById("nome-detalhes").innerText = produto.nome;
 
@@ -141,5 +147,41 @@ function voltarCatalogo() {
     document.getElementById("detalhes-produto").style.display = "none";
 
     document.getElementById("catalogo").style.display = "grid";
+
+}
+// Selecionar tamanho
+const botoesTamanho = document.querySelectorAll(".tamanhos button");
+
+botoesTamanho.forEach(function(botao) {
+
+    botao.addEventListener("click", function() {
+
+        tamanhoSelecionado = botao.innerText;
+
+        botoesTamanho.forEach(function(b) {
+            b.classList.remove("selecionado");
+        });
+
+        botao.classList.add("selecionado");
+
+    });
+
+});
+
+// Botão de adicionar ao carrinho
+const botaoAdicionar = document.querySelector(".botao-carrinho");
+
+if (botaoAdicionar) {
+
+    botaoAdicionar.addEventListener("click", function() {
+
+        if (tamanhoSelecionado == null) {
+            alert("Escolha um tamanho primeiro!");
+            return;
+        }
+
+        adicionarAoCarrinho(produtoSelecionado, tamanhoSelecionado);
+
+    });
 
 }
