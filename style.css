@@ -14,14 +14,14 @@ body {
 }
 
 
-/* 1. FAZ O MENU FLUTUAR */
+/* FAZ O MENU FLUTUAR */
 header {
     position: sticky;
     top: 8px;
     z-index: 1000;
 }
 
-/* 2. MENU NO TOPO */
+/* MENU NO TOPO */
 #header {
 
     background-color: rgba(255, 255, 255, 0.6); 
@@ -51,7 +51,6 @@ header.menu-reduzido #header {
     width: 80%; 
     margin: 5px auto; 
     
-    /* Mantém a transparência mesmo quando reduzido */
     background-color: rgba(255, 255, 255, 0.6); 
 }
 
@@ -183,9 +182,7 @@ body #home.body {
     display: flex;
     justify-content: center;
     padding: 60px 0;
-    
 }
-
 
 #lancamento {
     display: flex;
@@ -214,12 +211,69 @@ body #home.body {
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-.Lancamentos .produtos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px; 
-    text-align: left;
+/* ==================== CARROSSEL E SETAS ==================== */
+
+/* Caixa invisível que alinha as setas com os produtos */
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+/* Estilo das setinhas redondas */
+.seta-carrossel {
+    position: absolute;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.seta-carrossel:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.05);
+}
+
+.seta-esq {
+    left: -22px; 
+}
+
+.seta-dir {
+    right: -22px; 
+}
+
+/* A pista de rolagem dos produtos (Substituiu o antigo "grid") */
+.Lancamentos .produtos {
+    display: flex;
+    gap: 25px; /* Mantive o seu gap original de 25px */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 5px; 
+    width: 100%;
+    
+    /* Esconde a barra de rolagem nativa */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.Lancamentos .produtos::-webkit-scrollbar {
+    display: none; 
+}
+
+/* ==================== ESTILO DOS CARDS (PRODUTOS) ==================== */
 
 .Lancamentos .produto {
     position: relative;
@@ -231,6 +285,12 @@ body #home.body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    
+    /* === A CORREÇÃO ESTÁ AQUI 👇 === */
+    width: 270px;          /* Define uma largura exata para o card */
+    flex: 0 0 270px;       /* Impede a imagem de esticar o card */
+    box-sizing: border-box;
 }
 
 .Lancamentos .produto:hover {
@@ -238,8 +298,11 @@ body #home.body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.Lancamentos .produto img {
+Lancamentos .produto img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Deixa as imagens quadradas e alinhadas */
+    object-fit: cover;
     border-radius: 10px;
     background-color: #f4f4f5;
     transition: transform 0.4s ease;
