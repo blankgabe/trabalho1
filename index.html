@@ -106,22 +106,22 @@
 
                     <!-- PRODUTOS -->
                     <div class="produtos" id="lista-produtos">
-                        <div class="produto">
+                        <div class="produto" data-desconto="67">
                             <img src="/assets/Cracks 01.png" alt="Produto">
                             <h3>Cracks Aurudo</h3>
                             <span>R$ 167,67</span>
                         </div>
-                        <div class="produto">
+                        <div class="produto" data-desconto="30">
                             <img src="/assets/caneca nova.png" alt="Produto">
                             <h3>Caneca Megalo</h3>
                             <span>R$ 129,90</span>
                         </div>
-                        <div class="produto">
+                        <div class="produto" data-desconto="20">
                             <img src="/assets/mouse pad.png" alt="Produto">
                             <h3>MousePad Megalo</h3>
                             <span>R$ 89,90</span>
                         </div>
-                        <div class="produto">
+                        <div class="produto" data-desconto="50">
                             <img src="/assets/Mochila.png" alt="Produto">
                             <h3>Pinchila</h3>
                             <span>R$ 469,67</span>
@@ -132,13 +132,13 @@
                             <span>R$69,99</span>
 
                         </div>
-                        <div class="produto">
+                        <div class="produto" data-desconto="15">
                             <img src="/assets/calça dogs.png" alt="Produto">
                             <h3>Calça AuDogs</h3>
                             <span>R$ 113,34</span>
 
                         </div>
-                        <div class="produto">
+                        <div class="produto" data-desconto="15">
                             <img src="/assets/moletom ds.png" alt="Produto">
                             <h3>Moletom DS</h3>
                             <span>R$ 251,01</span>
@@ -198,6 +198,125 @@
             pista.scrollLeft = pista.scrollLeft - 293;
         }
     </script>
+    <script>
+    function atualizarDescontosIndex() {
+
+        const hoje = new Date();
+        const fimBlackFriday = new Date(2026, 10, 30, 23, 59, 59);
+
+        const blackFridayAtiva = hoje <= fimBlackFriday;
+
+        const clienteNovo =
+            localStorage.getItem("clienteNovo15") == "sim";
+
+        const produtos = document.querySelectorAll(
+            "#lista-produtos .produto"
+        );
+
+        produtos.forEach(function (produto) {
+
+            const desconto = Number(
+                produto.dataset.desconto || 0
+            );
+
+            const precoElemento =
+                produto.querySelector("span");
+
+            if (!precoElemento || desconto == 0) {
+                return;
+            }
+
+            const precoOriginal = Number(
+                precoElemento.innerText
+                    .replace("R$", "")
+                    .replace(".", "")
+                    .replace(",", ".")
+                    .trim()
+            );
+
+            let precoFinal = precoOriginal;
+
+            // Desconto Black Friday
+            if (blackFridayAtiva) {
+
+                precoFinal =
+                    precoOriginal * (1 - desconto / 100);
+
+            }
+
+            // Desconto de cliente novo
+            if (clienteNovo && blackFridayAtiva) {
+
+                precoFinal =
+                    precoFinal * 0.85;
+
+            }
+
+            // Limpa o preço atual
+            precoElemento.innerHTML = "";
+
+            // Preço original
+            const precoAntigo =
+                document.createElement("span");
+
+            precoAntigo.className =
+                "preco-original";
+
+            precoAntigo.innerText =
+                precoOriginal.toLocaleString(
+                    "pt-BR",
+                    {
+                        style: "currency",
+                        currency: "BRL"
+                    }
+                );
+
+            // Preço promocional
+            const precoPromocional =
+                document.createElement("span");
+
+            precoPromocional.className =
+                "preco-promocional";
+
+            precoPromocional.innerText =
+                precoFinal.toLocaleString(
+                    "pt-BR",
+                    {
+                        style: "currency",
+                        currency: "BRL"
+                    }
+                );
+
+            // Percentual de desconto
+            const porcentagem =
+                document.createElement("span");
+
+            porcentagem.className =
+                "porcentagem-desconto";
+
+            porcentagem.innerText =
+                desconto + "% OFF";
+
+            // Coloca tudo no produto
+            precoElemento.appendChild(precoAntigo);
+
+            precoElemento.appendChild(
+                document.createElement("br")
+            );
+
+            precoElemento.appendChild(precoPromocional);
+
+            precoElemento.appendChild(
+                document.createElement("br")
+            );
+
+            precoElemento.appendChild(porcentagem);
+
+        });
+    }
+
+    atualizarDescontosIndex();
+</script>
     <script src="carrinho.js"></script>
 </body>
 
