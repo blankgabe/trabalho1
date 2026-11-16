@@ -772,9 +772,6 @@ function atualizarCarrinho() {
     const totalElemento =
         document.getElementById("total-carrinho");
 
-
-    // Se os elementos não existirem nesta página,
-    // não quebra o JavaScript inteiro.
     if (!contador || !itens || !totalElemento) {
 
         return;
@@ -1116,10 +1113,7 @@ function criarPopupDesconto() {
         .getElementById("fechar-popup")
         .addEventListener("click", function () {
 
-            localStorage.setItem(
-                "popup15Visto",
-                "sim"
-            );
+            localStorage.removeItem("clienteNovo15");
 
             popup.remove();
 
